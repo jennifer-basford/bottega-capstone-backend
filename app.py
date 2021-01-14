@@ -9,7 +9,7 @@ app = Flask(__name__)
 heroku = Heroku(app)
 
 basedir = os.path.abspath(os.path.dirname(__file__))
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://dkszbtkxofgpfs:b3f855e7bf4db4877b07e76a15e2cff83587208f988b864d8aa919316b8bfe68@ec2-52-205-145-201.compute-1.amazonaws.com:5432/d96bkhkqdk9mmm'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://oeffnqxgvlpdjm:97c333d31104a23946f05455d442c567b83a24efa02d459231796130e89b4a26@ec2-107-23-191-123.compute-1.amazonaws.com:5432/d3k4md94rserb9'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
