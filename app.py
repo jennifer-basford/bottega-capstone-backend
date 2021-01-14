@@ -16,6 +16,7 @@ CORS(app)
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 
+
 class Contact(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), unique=False)
@@ -36,7 +37,7 @@ contacts_schema = ContactSchema(many=True)
 
 #Endpoint to create an entry
 
-@app.route('/contact', methods=["POST"])
+@app.route('/admin', methods=["POST"])
 def add_contact():
     name = request.json['name']
     email = request.json['email']
@@ -69,7 +70,7 @@ def update_contact(id):
     db.session.commit()
     return contact_schema.jsonify(contact)
 
-@app.route('/contact/<id>', methods=["DELETE"])
+@app.route('/admin/<id>', methods=["DELETE"])
 def get_contact(id):
     contact = Contact.query.get(id)
     db.session.delete(contact)
